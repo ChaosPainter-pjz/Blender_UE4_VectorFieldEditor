@@ -30,7 +30,7 @@ def build_vectorfield(context):
 	
 	# create the volume
 	me = bpy.data.meshes.new("Vert")
-	me.vertices.add(totalvertscount)
+	me.vertices.add(int(totalvertscount))
 	from bpy_extras import object_utils
 	object_utils.object_data_add(context, me, operator=None)
 	
@@ -75,7 +75,7 @@ def build_vectorfield(context):
 	del meshverts[:]
 	
 	# create the particle system
-	psettings.count = totalvertscount
+	psettings.count = int(totalvertscount)
 	psettings.emit_from = 'VERT'
 	psettings.normal_factor = 0.0
 	psettings.use_emit_random = False
